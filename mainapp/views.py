@@ -4,8 +4,9 @@ from django.utils import timezone
 
 from .models import Product, ProductCategory
 
+
 def main(request):
-    title = 'главная'
+    title = "главная"
     products = Product.objects.all()
 
     content = {"title": title, "products": products, "media_url": settings.MEDIA_URL}
@@ -17,9 +18,13 @@ def products(request, pk=None):
     links_menu = ProductCategory.objects.all()
 
     same_products = Product.objects.all()
-    
-    content = {"title": title, "links_menu": links_menu, "same_products": same_products,
-        "media_url": settings.MEDIA_URL}
+
+    content = {
+        "title": title,
+        "links_menu": links_menu,
+        "same_products": same_products,
+        "media_url": settings.MEDIA_URL,
+    }
     if pk:
         print(f"User select category: {pk}")
     return render(request, "mainapp/products.html", content)
@@ -43,5 +48,5 @@ def contact(request):
             "address": "Близко к океану",
         },
     ]
-    content = {"title": title, "visit_date": visit_date, "locations": locations} 
-    return render(request, "mainapp/contact.html",content)
+    content = {"title": title, "visit_date": visit_date, "locations": locations}
+    return render(request, "mainapp/contact.html", content)
