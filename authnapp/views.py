@@ -1,4 +1,3 @@
-
 from django.conf import settings
 from django.contrib import auth
 from django.shortcuts import HttpResponseRedirect, render
@@ -58,4 +57,3 @@ def edit(request):
 
     content = {"title": title, "edit_form": edit_form, "media_url": settings.MEDIA_URL}
     return render(request, "authnapp/edit.html", content)
-    

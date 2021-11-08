@@ -14,6 +14,7 @@ class ShopUserLoginForm(AuthenticationForm):
         model = ShopUser
         fields = ("username", "password")
 
+
 class ShopUserRegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(ShopUserRegisterForm, self).__init__(*args, **kwargs)
@@ -49,4 +50,3 @@ class ShopUserEditForm(UserChangeForm):
     class Meta:
         model = ShopUser
         fields = ("username", "first_name", "email", "age", "avatar")
-        
