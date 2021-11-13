@@ -29,5 +29,6 @@ urlpatterns = [
     path("auth/", include("authnapp.urls", namespace="auth")),
 ]
 
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
