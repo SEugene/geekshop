@@ -340,6 +340,8 @@ html, body {
 
 .basket span {
 	margin-left: 25px;
+	font-size: small;
+	white-space: nowrap;
 }
 
 .clearfix:after {
