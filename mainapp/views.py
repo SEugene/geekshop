@@ -31,10 +31,10 @@ def products(request, pk=None):
         """for item in basket:
             price = Product.objects.get(pk=item.product_id).price
             basket_sum += item.product.price * item.quantity"""
-        
+
         basket_sum = Basket.totalsum(basket)
         basket_quantity = Basket.totalqnt(basket)
-        
+
     if pk is not None:
         if pk == 0:
             products = Product.objects.all().order_by("price")
