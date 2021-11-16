@@ -7,7 +7,8 @@
     </li>
     {% for link in links_menu %}
     <li>
-        <a href="{% url 'products:category' link.pk %}">
+        <a href="{% url 'products:category' link.pk %}"
+            class="{% if request.resolver_match.kwargs.pk == link.pk %}active{% endif %}">
             {{ link.name }}
         </a>
     </li>
