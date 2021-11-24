@@ -1,4 +1,3 @@
-
 from django import forms
 
 from authnapp.forms import ShopUserEditForm
