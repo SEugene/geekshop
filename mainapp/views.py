@@ -5,10 +5,9 @@ from django.core.cache import cache
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+from django.views.decorators.cache import cache_page
 
 from .models import Contact, Product, ProductCategory
-
-from django.views.decorators.cache import cache_page
 
 
 def get_links_menu():
