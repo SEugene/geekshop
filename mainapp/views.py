@@ -8,6 +8,8 @@ from django.utils import timezone
 
 from .models import Contact, Product, ProductCategory
 
+from django.views.decorators.cache import cache_page
+
 
 def get_links_menu():
     if settings.LOW_CACHE:
@@ -160,6 +162,7 @@ def product(request, pk):
     return render(request, "mainapp/product.html", content)
 
 
+@cache_page(600)
 def contact(request):
     title = "о нас"
     visit_date = timezone.now()
